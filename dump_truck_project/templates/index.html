@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Самосвалы<title>
+</head>
+<body>
+    <h1>Самосвалы</h1>
+    <h2>Таблица 1: Самосвалы</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Модель</th>
+                <th>Грузоподъёмность</th>
+                <th>Текущая загруженность</th>
+                <th>SiO2</th>
+                <th>FE</th>
+                <th>Координаты разгрузки</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for truck in dump_trucks %}
+            <tr>
+                <td>{{ truck.number}}</td>
+                <td>{{ truck.name}}</td>
+                <td>{{ truck.lifting_capacity}}</td>
+                <td>{{ truck.current_weight}}</td>
+                <td>{{ truck.SiO2}}</td>
+                <td>{{ truck.FE}}</td>
+                <td><input type="text" name="coordinates" placeholder="X Y"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button type="submit" formethod="post">Рассчитать</button>
+
+    <h2>Таблица 2: Склад</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Общий объём</th>
+                <th>SiO2</th>
+                <th>FE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{storage.current_weight}}</td>
+                <td>{{storage.SiO2}}%</td>
+                <td>{{storage.FE}}%</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
