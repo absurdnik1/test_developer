@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'dump_truck_project.urls'
+ROOT_URLCONF = 'dump_track_project.urls'
 TEMPLATES_DIR = BASE_DIR / 'templates'
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dump_truck_project.wsgi.application'
+WSGI_APPLICATION = 'dump_track_project.wsgi.application'
 
 
 # Database
